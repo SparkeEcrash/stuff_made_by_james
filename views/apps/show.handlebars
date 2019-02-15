@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col s12 m8">
+    <h3>{{app.title}}
+      <small>{{{editIcon app.user.id user.id app.id false}}}</small>
+    </h3>
+    <div class="card story">
+      <div class="card-content">
+        <span class="card-title">{{formatDate app.date 'MMMM Do YYYY'}}</span>
+        {{{app.body}}}
+      </div>
+    </div>
+
+    {{#if app.allowComments}}
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            Comments
+            {{#if user}}
+              <form method="POST" action="/stories/comment/{{app.id}}">
+                <div class="input-field">
+                  <textarea name="commentBody" class="materialize-textarea"></textarea>
+                  <label> Add Comment</label>
+                </div>
+                <input type="submit" value="Submit" class="btn">
+              </form>
+            {{else}}
+              <p>Please <a href="/auth/google">log</a> in to leave a comment</p>
+            {{/if}}
+          </span>
+        </div>
+      </div>
+      {{#each app.comments}}
+        <div class="card">
+          <div class="card-content">
+            <h5>{{commentBody}}</h5>
+            <div class="chip">
+              <img src="{{commentUser.image}}">
+              <a href="/apps/user/{{commentUser.id}}">
+              {{commentUser.firstName}} {{commentUser.lastName}}
+              </a>
+            </div>
+            <br>
+            <small>Posted: {{formatDate commentDate 'MMMM Do YYYY'}}</small>
+          </div>
+        </div>
+      {{/each}}
+    {{/if}}
+  </div>
+  <div class="col s12 m4">
+    <div class="card center-align">
+      <div class="card-content">
+        <span class="card-title">{{app.user.firstName}} {{app.user.lastName}}</span>
+        <img src="{{app.user.image}}" class="circle responsive-img">
+      </div>
+      <div class="card-action">
+        <a href="/apps/user/{{app.user.id}}">More From {{app.user.firstName}}</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<h1>Edit App</h1>
+<div class="row">
+  <form action="/apps/{{app.id}}?_method=PUT" method="POST" class="col s12">
+  {{!-- method gets overriden as PUT over POST --}}
+    <input type="hidden" name="_method" value="PUT">
+    <div class="row">
+      <div class="input-field">
+        <input type="text" name="title" value="{{app.title}}">
+        <label for="title">Title</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <select name="status">
+          {{!-- below part is using the below heper function from hbs.js--}}
+          {{!-- select: function(selected, options){} --}}
+          {{#select app.status}}
+            <option value="public" selected>Public</option>
+            <option value="private">Private</option>
+            <option value="unpublished">Unpublished</option>
+          {{/select}}
+        </select>
+        {{!-- needs to be initialized in main.handlebars --}}
+        {{!-- $('select').material_select(); --}}
+        <label for="status">Status</label>
+      </div>
+    </div>
+    <div class="row">
+      <p>
+        <input type="checkbox" name="allowComments" class="filled-in" id="filled-in-box" {{#if app.allowComments}} checked="checked" {{/if}}>
+        <label for="filled-in-box">Allow comments</label>
+      </p>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <h5>List details for your Application:</h5>
+        <textarea name="body">{{app.body}}</textarea>
+      </div>
+    </div>
+    <input type="submit" value="Save" class="btn">
+  </form>
+</div>
