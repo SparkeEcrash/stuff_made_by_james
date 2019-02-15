@@ -28,9 +28,13 @@ module.exports = function(passport) {
           email: profile.emails[0].value,
           image
         }
+
+        //NOTE: make sure user has owner: true property in order to upload edit and remove apps on the website
+
         // Return user
         if(user) {
           done(null, user);
+          //the user returned here gets set as res.locals.users global variable in app.js
         } else {
         // Create user
           new User(newUser)

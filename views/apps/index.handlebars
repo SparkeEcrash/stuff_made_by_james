@@ -6,7 +6,7 @@
         <div class="card-image">
           {{#if user}}
             {{{editIcon user.id ../user.id id}}}
-            {{!-- ../ is required because user.id is inside the #each stories loop --}}
+            {{!-- ../ is required because user.id is inside the #each apps loop --}}
             {{!-- to get global logged in from app.js at app.use((req, res, next) => { --}}
             {{!-- res.locals.user = req.user || null;}... we need to move up a directory with ../ --}}
           {{/if}}

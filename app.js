@@ -74,7 +74,7 @@ app.use(passport.session());
 // Set global vars
 app.use((req, res, next) => {
   res.locals.user = req.user || null;
-  //if user is authenticated and has successfully passed through assport authentication, the user object from passport google oauth 2.0 that is inside req.user is stored into a global response variable called user
+  //if user is authenticated and has successfully passed through Passport authentication, the user object from passport google oauth 2.0 that is inside req.user is stored into a global response variable called user
   next()
 })
 

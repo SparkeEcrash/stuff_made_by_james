@@ -12,7 +12,8 @@ router.get('/google/callback',
     failureRedirect: '/'
   }), (req, res) => {
     // Successful authentication, redirect home
-    res.redirect('/dashboard');
+    // res.redirect('/dashboard');
+    res.redirect('/apps');
   }
 );
 

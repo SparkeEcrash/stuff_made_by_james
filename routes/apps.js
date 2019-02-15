@@ -32,7 +32,7 @@ router.get('/show/:id', (req, res) => {
     } else {
       if(req.user){
         if(req.user.id == app.user._id) {
-          //double equal signs here is necessary because req.user.id is a string and story.user._id is an object that contains a key value pair
+          //double equal signs here is necessary because req.user.id is a string and app.user._id is an object that contains a key value pair
           res.render('apps/show', {
             app
           });

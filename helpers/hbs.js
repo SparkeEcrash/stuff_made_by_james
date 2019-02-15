@@ -22,9 +22,9 @@ module.exports = {
   editIcon: function(appUser, loggedUser, appId, floating=true) {
     if(appUser === loggedUser) {
       if(floating){
-        return `<a href="/stories/edit/${appId}" class="btn-floating halfway-fab red"><i class="fa fa-pencil"></i></a>`;
+        return `<a href="/apps/edit/${appId}" class="btn-floating halfway-fab red"><i class="fa fa-pencil"></i></a>`;
       } else {
-        return `<a href="/stories/edit/${appId}"><i class="fa fa-pencil"></i></a>`;
+        return `<a href="/apps/edit/${appId}"><i class="fa fa-pencil"></i></a>`;
       }
     } else {
       return '';

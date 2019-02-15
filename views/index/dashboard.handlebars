@@ -18,7 +18,7 @@
           <td><span class="dash-status">{{status}}</span></td>
           <td class="center-align">
             <a class="btn" href="/apps/edit/{{id}}"><i class="fa fa-pencil"></i> Edit</a>
-            <form action="/stories/{{id}}?_method=DELETE" method="POST" id="delete-form">
+            <form action="/apps/{{id}}?_method=DELETE" method="POST" id="delete-form">
               <input type="hidden" name="_method" value="DELETE">
               <button type="submit" class="btn red"><i class="fa fa-remove"></i> Delete</button>
             </form>
@@ -28,5 +28,5 @@
     </tbody>
   </table>
 {{else}}
-  <p>You have not created any stories yet</p>
+  <p>You have not created listed any apps yet</p>
 {{/if}}
