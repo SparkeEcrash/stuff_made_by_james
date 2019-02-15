@@ -12,6 +12,7 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
   console.log(res.locals.user);
   App.find({user:req.user.id})
     .then(apps => {
+      // res.render('index/dashboard', {
       res.render('index/dashboard', {
         apps
       });
