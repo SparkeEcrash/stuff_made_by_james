@@ -1,0 +1,30 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+// Create Schema
+const UserSchema = new Schema({
+  googleID: {
+    type: String,
+    required: true
+    // required only if google authenticate is the only login option
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  firstName: {
+    type: String
+  },
+  lastName: {
+    type: String
+  },
+  image: {
+    type: String
+  },
+  owner: {
+    type: String
+  }
+});
+
+// Create collection and add schema
+mongoose.model('users', UserSchema);
