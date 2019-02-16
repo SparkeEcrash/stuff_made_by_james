@@ -12,6 +12,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  overflow: auto !important;
 }
 
 main {
@@ -24,6 +25,10 @@ main {
 }
 
 a {
+  color: black;
+}
+
+label {
   color: black;
 }
 

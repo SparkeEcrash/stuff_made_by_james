@@ -4,13 +4,21 @@
   {{!-- method gets overriden as PUT over POST --}}
     <input type="hidden" name="_method" value="PUT">
     <div class="row">
-      <div class="input-field">
+      <div class="input-field col l6 s12">
         <input type="text" name="title" value="{{app.title}}">
         <label for="title">Title</label>
       </div>
+      <div class="input-field col l6 s12">
+        <input type="text" name="image" value="{{app.title}}">
+        <label for="image">Image File</label>
+      </div>
     </div>
     <div class="row">
-      <div class="input-field">
+      <div class="input-field col l6 s12">
+        <input type="text" name="type" value="{{app.title}}">
+        <label for="type">Application Type</label>
+      </div>     
+      <div class="input-field col l6 s12">
         <select name="status">
           {{!-- below part is using the below heper function from hbs.js--}}
           {{!-- select: function(selected, options){} --}}
@@ -23,6 +31,80 @@
         {{!-- needs to be initialized in main.handlebars --}}
         {{!-- $('select').material_select(); --}}
         <label for="status">Status</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col l2 s12">
+        <input type="checkbox" id="htmlcssjs" />
+        <label for="htmlcssjs">HTML/CSS/JS</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="ejs" />
+        <label for="ejs">EJS</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="handlebars" />
+        <label for="handlebars">Handlebars.js</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="reactredux" />
+        <label for="reactredux">React.js + Redux</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="angular" />
+        <label for="angular">Angular.js</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="view" />
+        <label for="view">View.js</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="jquery" />
+        <label for="jquery">jQuery</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="lodash" />
+        <label for="lodash">Lodash</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="bootstrap" />
+        <label for="bootstrap">Bootstrap</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="materialize-css" />
+        <label for="materialize-css">Materialize CSS</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="semantic-ui" />
+        <label for="semantic-ui">Semantic UI</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="aws" />
+        <label for="aws">AWS</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="php" />
+        <label for="php">PHP</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="laravel" />
+        <label for="laravel">Laravel</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="nodejs" />
+        <label for="nodejs">Node.js</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="express" />
+        <label for="express">Express.js</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="mongodb" />
+        <label for="mongodb">MongoDB</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="mysql" />
+        <label for="mysql">MySQL</label>
       </div>
     </div>
     <div class="row">
