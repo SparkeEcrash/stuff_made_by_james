@@ -14,7 +14,7 @@
   {{#if user.owner}}
     {{> _add-btn}}
   {{/if}}
-  <main>
+  <main class="valign-wrapper">
     <div class="container">
       {{{body}}}
     </div>
@@ -22,17 +22,12 @@
   {{> _footer}}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
   <script>
     $(document).ready(() => {
       $('.button-collapse').sideNav();
       $('select').material_select();
+      $('.modal').modal();
     });
-
-    CKEDITOR.replace('body', {
-      plugins: 'wysiwygarea,toolbar,basicstyles,link'
-    });
-    //DOM name of the text area
   </script>
 </body>
 </html>

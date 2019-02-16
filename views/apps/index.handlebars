@@ -21,11 +21,12 @@
           <br>
           <div class="chip">
             <img src="{{user.image}}" alt="Contact Person">
-            <a href="/apps/user/{{user.id}}">{{user.firstName}} {{user.lastName}}</a>
+            {{!-- <a href="/apps/user/{{user.id}}">{{user.firstName}} {{user.lastName}}</a> --}}
+            {{user.firstName}} {{user.lastName}}
           </div>
         </div>
         <div class="card-action center-align">
-          <a class="btn grey" href="/apps/show/{{id}}">Read More</a>
+          <a class="waves-effect waves-light btn grey" href="/apps/show/{{id}}">View App</a>
         </div>
       </div>
     </div>

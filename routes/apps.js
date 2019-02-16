@@ -169,4 +169,17 @@ router.post('/comment/:id', (req, res) => {
   });
 });
 
+router.delete('/comment/:app_id/:comment_id', (req, res) => {
+  App.findOne({
+    _id: req.params.app_id
+  })
+  .then(app => {
+    app.comments.remove(req.params.comment_id);
+    app.save()
+      .then(app => {
+        res.redirect(`/apps/show/${app.id}`);
+      });
+  });
+});
+
 module.exports = router;

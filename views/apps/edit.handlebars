@@ -37,6 +37,14 @@
         <textarea name="body">{{app.body}}</textarea>
       </div>
     </div>
-    <input type="submit" value="Save" class="btn">
+    <input type="submit" value="Save" class="waves-effect waves-light btn">
   </form>
 </div>
+
+<script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+<script>
+  CKEDITOR.replace('body', {
+    plugins: 'wysiwygarea,toolbar,basicstyles,link'
+  });
+  //DOM name of the text area
+</script>

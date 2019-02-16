@@ -22,12 +22,20 @@ module.exports = {
   editIcon: function(appUser, loggedUser, appId, floating=true) {
     if(appUser === loggedUser) {
       if(floating){
-        return `<a href="/apps/edit/${appId}" class="btn-floating halfway-fab red"><i class="fa fa-pencil"></i></a>`;
+        return `<a href="/apps/edit/${appId}" class="waves-effect waves-light btn-floating halfway-fab red"><i class="fa fa-pencil"></i></a>`;
       } else {
         return `<a href="/apps/edit/${appId}"><i class="fa fa-pencil"></i></a>`;
       }
     } else {
       return '';
+    }
+  },
+  editComment: function(commentUser, loggedUser, appId, commentId) {
+    if(commentUser === loggedUser) {
+      return `<form id="delete-comment-${appId}-${commentId}" action="/apps/comment/${appId}/${commentId}?_method=DELETE" method="POST" onsubmit="return confirmDeleteComment()">
+      <input type="hidden" name="_method" value="DELETE">
+      <a href="javascript:;" onclick="confirmDeleteComment('${appId}', '${commentId}')">Delete</a>
+      </form>`
     }
   }
 }

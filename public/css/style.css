@@ -1,4 +1,3 @@
-
 * {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -17,6 +16,15 @@ body {
 
 main {
   flex: 1 0 auto;
+  min-height: 90vh;
+  background-image: url('/images/background_one.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 64px);
+}
+
+a {
+  color: black;
 }
 
 .nav-wrapper .fa-bars {
@@ -35,6 +43,23 @@ footer {
   text-transform: capitalize;
 }
 
-#delete-form {
+.delete-app {
   display: inline;
+}
+
+#profile-picture{
+  background-image: url('/images/profile_bw.jpg');
+  background-size: cover;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  margin-top: 40px;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  color: grey !important;
+}
+
+footer {
+  margin-top: 0 !important;
 }

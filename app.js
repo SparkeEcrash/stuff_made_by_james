@@ -28,7 +28,8 @@ const {
   stripTags,
   formatDate,
   select,
-  editIcon
+  editIcon,
+  editComment
 } = require('./helpers/hbs');
 
 mongoose.connect(keys.mongoURI, {useNewUrlParser: true})
@@ -52,7 +53,8 @@ app.engine('handlebars', exphbs({
     stripTags,
     formatDate,
     select,
-    editIcon
+    editIcon,
+    editComment
   },
   defaultLayout: 'main'
 }));

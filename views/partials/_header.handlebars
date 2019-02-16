@@ -1,14 +1,14 @@
-<nav class="grey darken-3">
+<nav class="indigo darken-1">
   <div class="container">
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo center">James Park</a>
       <a href="#" data-activates="main-menu" class="button-collapse show-on-large"><i class="fa fa-bars"></i></a>
       <ul class="right hide-on-small-only">
         {{#if user}}
+          <a href="/" class="brand-logo center">Hi {{user.firstName}}</a>
           {{!-- <li><a href="/dashboard">Welcome {{user.firstName}}</a></li> --}}
-          <li>Welcome {{user.firstName}}</li>
           <li><a href="/auth/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
         {{else}}
+          <a href="/" class="brand-logo center">Welcome</a>
           <li><a href="/apps"><i class="fa fa-folder-open"></i> James's Apps</a></li>
         {{/if}}
       </ul>
@@ -20,7 +20,7 @@
         </li>
         {{else}}
         <li>
-          <a class="btn red darken-1" href="/auth/google"><i class="fa fa-google left"></i> Login With Google</a>
+          <a class="waves-effect waves-light btn blue darken-1" href="/auth/google"><i class="fa fa-google left"></i> Login With Google</a>
         </li>
         {{/if}}
         <li>

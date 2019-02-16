@@ -1,8 +1,19 @@
-<h1>Welcome</h1>
-<p>Thanks for Visiting</p>
-<p>This is a website where I upload my applications that I made for fun and would like to share with anybody who would like to see it</p>
-<p>Please log in with your Google account if you would like to leave comments</p>
-{{#if user}}
-{{else}}
-  <a class="btn red darken-1" href="/auth/google"><i class="fa fa-google left"></i> Login With Google</a>
-{{/if}}
+
+<div class="row" id="welcome-page">  
+  <div class="col l6 s12 center-align">
+    <h1>Hi there!</h1>
+    <div class="left-align">
+      <p>Hi my name is James and I am an aspiring web developer.</p>
+      <p>This is a website where I upload my applications that I made for fun and would like to share with anybody who would like to see it</p>
+      <p>Please log in with your Google account if you would like to leave comments</p>
+    </div>
+    {{#if user}}
+    {{else}}
+      <a class="waves-effect waves-light btn blue darken-1" href="/auth/google"><i class="fa fa-google left"></i> Login With Google</a>
+    {{/if}}
+  </div>
+  <div class="col l4 offset-l2 s12 center-align">
+    <img class="center-align" id="profile-picture">
+  </div>
+</div>
+

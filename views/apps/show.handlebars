@@ -16,12 +16,12 @@
           <span class="card-title">
             Comments
             {{#if user}}
-              <form method="POST" action="/apps/comment/{{app.id}}">
+              <form method="POST" action="/apps/comment/{{app.id}}" onsubmit="return validateComment()">
                 <div class="input-field">
-                  <textarea name="commentBody" class="materialize-textarea"></textarea>
+                  <textarea id="comment" name="commentBody" class="materialize-textarea"></textarea>
                   <label> Add Comment</label>
                 </div>
-                <input type="submit" value="Submit" class="btn">
+                <button type="submit" class="waves-effect waves-light btn">Submit</button>
               </form>
             {{else}}
               <p>Please <a href="/auth/google">log</a> in to leave a comment</p>
@@ -35,12 +35,13 @@
             <h5>{{commentBody}}</h5>
             <div class="chip">
               <img src="{{commentUser.image}}">
-              <a href="/apps/user/{{commentUser.id}}">
+              {{!-- <a href="/apps/user/{{commentUser.id}}"> --}}
               {{commentUser.firstName}} {{commentUser.lastName}}
-              </a>
+              {{!-- </a> --}}
             </div>
             <br>
             <small>Posted: {{formatDate commentDate 'MMMM Do YYYY'}}</small>
+            <small>{{{editComment commentUser.id  ../user.id ../app.id id}}}</small>
           </div>
         </div>
       {{/each}}
@@ -58,3 +59,50 @@
     </div>
   </div>
 </div>
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Oh no! Empty Comment</h4>
+    <p>Please make there is a comment to submit</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+  </div>
+</div>
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <h4>Are you sure?</h4>
+    <p>Please click 'Yes' to delete</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" onclick="deleteComment()" class="modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">No</a>
+  </div>
+  <input type="hidden" id="appId">
+  <input type="hidden" id="commentId">
+</div>
+
+
+<script>
+  function validateComment() {
+    if($('#comment').val() === '') {
+      $('#modal1').modal('open');
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  function confirmDeleteComment(appId, commentId) {
+    $('#appId').val(appId);
+    $('#commentId').val(commentId);
+    $('#modal2').modal('open');
+  }
+
+  function deleteComment() {
+    const appId = $('#appId').val();
+    const commentId = $('#commentId').val();
+    const formId = `delete-comment-${appId}-${commentId}`;
+    $('#'+ formId).submit();
+  }
+
+</script>

@@ -1,7 +1,7 @@
 <h1>Welcome {{user.firstName}}</h1>
 <h4>Your Apps</h4>
 {{#if apps}}
-  <table class="striped">
+  <table class="highlight centered responsive-table">
     <thead>
       <tr>
         <th>Title</th>
@@ -17,10 +17,10 @@
           <td>{{formatDate data 'MMMM do YYYY'}}</td>
           <td><span class="dash-status">{{status}}</span></td>
           <td class="center-align">
-            <a class="btn" href="/apps/edit/{{id}}"><i class="fa fa-pencil"></i> Edit</a>
-            <form action="/apps/{{id}}?_method=DELETE" method="POST" id="delete-form">
+            <a class="waves-effect waves-light btn" href="/apps/edit/{{id}}"><i class="fa fa-pencil"></i> Edit</a>
+            <form action="/apps/{{id}}?_method=DELETE" method="POST" class="delete-app" id="delete-app-{{id}}">
               <input type="hidden" name="_method" value="DELETE">
-              <button type="submit" class="btn red"><i class="fa fa-remove"></i> Delete</button>
+              <button type="button" onclick="confirmDeleteApp('{{id}}')" class="waves-effect waves-light btn red"><i class="fa fa-remove"></i> Delete</button>
             </form>
           </td>
         </tr>
@@ -30,3 +30,28 @@
 {{else}}
   <p>You have not created listed any apps yet</p>
 {{/if}}
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Are you sure?</h4>
+    <p>Please click 'Yes' to delete</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" onclick="deleteApp()" class="modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">No</a>
+  </div>
+  <input type="hidden" id="appId">
+</div>
+
+<script>
+  function confirmDeleteApp(appId) {
+    $('#appId').val(appId);
+    $('#modal1').modal('open');
+  }
+
+  function deleteApp() {
+    const appId = $('#appId').val();
+    const formId = `delete-app-${appId}`;
+    $('#'+ formId).submit();
+  }
+</script>
