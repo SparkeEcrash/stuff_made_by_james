@@ -63,7 +63,7 @@ footer {
 }
 
 .login {
-  color: hotpink !important;
+  color: rgb(1, 144, 240) !important;
 }
 
 .app_description {
@@ -71,6 +71,10 @@ footer {
   display: flex !important;
   align-self: center !important;
   justify-content: center !important;
+}
+
+table.striped > tbody > tr:nth-child(even) {
+  background-color: rgb(221, 221, 221);
 }
 
 #profile-picture{

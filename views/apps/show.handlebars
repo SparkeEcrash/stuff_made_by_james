@@ -20,7 +20,7 @@
             {{#if user}}
               <form method="POST" action="/apps/comment/{{app.id}}" onsubmit="return validateComment()">
                 <div class="input-field">
-                  <textarea id="comment" name="commentBody" class="materialize-textarea" spellcheck="false"></textarea>
+                  <textarea id="comment" name="commentBody" class="materialize-textarea" onfocus="commentToast()" spellcheck="false"></textarea>
                   <label> Add Comment</label>
                 </div>
                 <button type="submit" class="waves-effect waves-light btn">Submit</button>
@@ -53,7 +53,13 @@
     <div class="card center-align">
       <div class="card-content">
         <span class="card-title"><a href="{{app.url}}" target="_blank">Check out the Site</a></span>
-        <a href="{{app.url}}" target="_blank"><img src="/images/{{app.image}}" class="circle responsive-img"></a>
+        <a href="{{app.url}}" target="_blank">
+        {{#if app.image}} 
+          <img src="/images/{{app.image}}" class="circle responsive-img"></a>
+        {{else}}
+          <img src="/images/myfavicon_large.jpg" class="circle responsive-img">
+        {{/if}}
+        </a>
       </div>
       <div class="card-action">
         <a href="/apps/user/{{app.user.id}}">More From {{app.user.firstName}} {{app.user.lastName}}</a>
@@ -85,6 +91,11 @@
 
 
 <script>
+
+  function initialize() {
+    console.log('wassup');
+  }
+
   function validateComment() {
     if($('#comment').val() === '') {
       $('#modal1').modal('open');
@@ -105,6 +116,10 @@
     const commentId = $('#commentId').val();
     const formId = `delete-comment-${appId}-${commentId}`;
     $('#'+ formId).submit();
+  }
+
+  function commentToast() {
+    Materialize.toast('A comment would be awesome!', 2000, 'rounded')
   }
 
 </script>
