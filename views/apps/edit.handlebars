@@ -5,18 +5,18 @@
     <input type="hidden" name="_method" value="PUT">
     <div class="row">
       <div class="input-field col l6 s12">
-        <input type="text" name="title" value="{{app.title}}">
+        <input type="text" name="title" value="{{app.title}}" spellcheck="false">
         <label for="title">Title</label>
       </div>
       <div class="input-field col l6 s12">
-        <input type="text" name="image" value="{{app.title}}">
+        <input type="text" name="image" value="{{app.image}}" spellcheck="false">
         <label for="image">Image File</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col l6 s12">
-        <input type="text" name="type" value="{{app.title}}">
-        <label for="type">Application Type</label>
+        <input type="text" name="url" value="{{app.url}}" spellcheck="false">
+        <label for="type">Website URL</label>
       </div>     
       <div class="input-field col l6 s12">
         <select name="status">
@@ -35,75 +35,75 @@
     </div>
     <div class="row">
       <div class="col l2 s12">
-        <input type="checkbox" id="htmlcssjs" />
-        <label for="htmlcssjs">HTML/CSS/JS</label>
-      </div>
-      <div class="col l2 s12">
-        <input type="checkbox" id="ejs" />
-        <label for="ejs">EJS</label>
-      </div>
-      <div class="col l2 s12">
-        <input type="checkbox" id="handlebars" />
+        <input type="checkbox" id="handlebars" name="techstack[]" {{{techStackCheck app.techStack 'Handlebars.js'}}} value="Handlebars.js"/>
         <label for="handlebars">Handlebars.js</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="reactredux" />
+        <input type="checkbox" id="reactredux" name="techstack[]" {{{techStackCheck app.techStack 'React.js + Redux'}}} value="React.js + Redux"/>
         <label for="reactredux">React.js + Redux</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="angular" />
+        <input type="checkbox" id="angular" name="techstack[]" {{{techStackCheck app.techStack 'Angular.js'}}} value="Angular.js"/>
         <label for="angular">Angular.js</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="view" />
+        <input type="checkbox" id="view" name="techstack[]" {{{techStackCheck app.techStack 'View.js'}}} value="View.js"/>
         <label for="view">View.js</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="jquery" />
+        <input type="checkbox" id="meteor"  name="techstack[]" {{{techStackCheck app.techStack 'Meteor.js'}}} value="Meteor.js"/>
+        <label for="meteor">Meteor.js</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="jquery" name="techstack[]" {{{techStackCheck app.techStack 'jQuery'}}} value="jQuery"/>
         <label for="jquery">jQuery</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="lodash" />
+        <input type="checkbox" id="lodash" name="techstack[]" {{{techStackCheck app.techStack 'Lodash'}}} value="Lodash"/>
         <label for="lodash">Lodash</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="bootstrap" />
+        <input type="checkbox" id="bootstrap" name="techstack[]" {{{techStackCheck app.techStack 'Bootstrap'}}} value="Bootstrap"/>
         <label for="bootstrap">Bootstrap</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="materialize-css" />
+        <input type="checkbox" id="materialize-css" name="techstack[]" {{{techStackCheck app.techStack 'Materialize CSS'}}} value="Materialize CSS"/>
         <label for="materialize-css">Materialize CSS</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="semantic-ui" />
+        <input type="checkbox" id="semantic-ui" name="techstack[]" {{{techStackCheck app.techStack 'Semantic UI'}}} value="Semantic UI"/>
         <label for="semantic-ui">Semantic UI</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="aws" />
+        <input type="checkbox" id="firebase"  name="techstack[]" {{{techStackCheck app.techStack 'Firebase'}}} value="Firebase"/>
+        <label for="firebase">Firebase</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="aws" name="techstack[]" {{{techStackCheck app.techStack 'AWS'}}} value="AWS"/>
         <label for="aws">AWS</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="php" />
+        <input type="checkbox" id="php" name="techstack[]" {{{techStackCheck app.techStack 'PHP'}}} value="PHP"/>
         <label for="php">PHP</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="laravel" />
+        <input type="checkbox" id="laravel" name="techstack[]" {{{techStackCheck app.techStack 'Laravel'}}} value="Laravel"/>
         <label for="laravel">Laravel</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="nodejs" />
+        <input type="checkbox" id="nodejs" name="techstack[]" {{{techStackCheck app.techStack 'Node.js'}}} value="Node.js"/>
         <label for="nodejs">Node.js</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="express" />
+        <input type="checkbox" id="express" name="techstack[]" {{{techStackCheck app.techStack 'Express.js'}}} value="Express.js"/>
         <label for="express">Express.js</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="mongodb" />
+        <input type="checkbox" id="mongodb" name="techstack[]" {{{techStackCheck app.techStack 'MongoDB'}}} value="MongoDB"/>
         <label for="mongodb">MongoDB</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="mysql" />
+        <input type="checkbox" id="mysql" name="techstack[]" {{{techStackCheck app.techStack 'MySQL'}}} value="MySQL"/>
         <label for="mysql">MySQL</label>
       </div>
     </div>
@@ -119,7 +119,7 @@
         <textarea name="body">{{app.body}}</textarea>
       </div>
     </div>
-    <input type="submit" value="Save" class="waves-effect waves-light btn">
+    <button type="submit" class="waves-effect waves-light btn">Save</button>
   </form>
 </div>
 

@@ -98,10 +98,22 @@ router.post('/', (req, res) => {
     allowComments = false;
   }
 
+  let url = req.body.url.trim();
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    url = url;
+  } else {
+    url = `http://${url}`;
+  }
+
+
+  const techStack = req.body['techstack[]'];
   const newApp = {
     title: req.body.title,
+    image: req.body.image,
+    url: url,
     body: req.body.body,
     status: req.body.status,
+    techStack: techStack,
     allowComments: allowComments,
     user: req.user.id
   }
@@ -127,10 +139,22 @@ router.put('/:id', (req, res) => {
       allowComments = false;
     }
 
+    let url = req.body.url.trim();
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      url = url;
+    } else {
+      url = `http://${url}`;
+    }
+
+    const techStack = req.body['techstack[]'];
+
   //New values
   app.title = req.body.title;
+  app.image = req.body.image;
+  app.url = url;
   app.body = req.body.body;
   app.status = req.body.status;
+  app.techStack = techStack,
   app.allowComments = allowComments;
   app.save()
     .then(app => {

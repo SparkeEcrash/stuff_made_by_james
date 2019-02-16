@@ -13,11 +13,69 @@ module.exports = {
   stripTags: function(input) {
     return input.replace(/<(?:.|\n)*?>/gm, '');
   },
+  appDescription: function(techStackArray) {
+    let appDescriptionHtml = '';
+    if (techStackArray.length > 6) {
+      techStackArray = techStackArray.slice(0, 6);
+      techStackArray.forEach(function(tech) {
+        appDescriptionHtml += `
+        <li>
+          ${tech}
+        </li>`
+      })
+      appDescriptionHtml += `
+        <li>
+          Others
+        </li>
+      `
+    } else {
+      techStackArray.forEach(function(tech) {
+        appDescriptionHtml += `
+        <li>
+          ${tech}
+        </li>`
+      });
+    }
+    return (
+      `<div class="app_description valign-wrapper">
+        <ul>
+          ${appDescriptionHtml}
+        </ul>
+      </div>`
+    )
+  },
   formatDate: function(date, format) {
     return moment(date).format(format);
   },
   select: function(selected, options) {
     return options.fn(this).replace( new RegExp(' value=\"' + selected + '\"'), '$& selected="selected"').replace( new RegExp('>' + selected + '</option>'), ' selected="selected"$&');
+  },
+  techStackCheck: function(techStackArray, techStack) {
+    let match = false;
+    techStackArray.forEach(function(tech) {
+      if(tech === techStack) {
+        match = true;
+      }
+    })    
+    return match ? `checked="checked"` : '';
+  },
+  techStackView: function(techArray) {
+    let techStackHtml = '';
+    techArray.forEach(function(tech) {
+      techStackHtml += `
+        <div class="col l6 xl4 s12"> 
+          <input type="checkbox" disabled="disabled" checked="checked"/>
+          <label>${tech}</label>
+        </div>
+      `
+    })
+    return (
+      `<div class="card valign-wrapper">
+        <div class="card-content col s12">
+          ${techStackHtml}
+        </div>
+      </div>`
+    )
   },
   editIcon: function(appUser, loggedUser, appId, floating=true) {
     if(appUser === loggedUser) {

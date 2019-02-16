@@ -2,19 +2,101 @@
 <div class="row">
   <form action="/apps" method="POST" class="col s12">
     <div class="row">
-      <div class="input-field">
-        <input type="text" name="title">
+      <div class="input-field col l6 s12">
+        <input type="text" name="title" spellcheck="false">
         <label for="title">Title</label>
+      </div>
+      <div class="input-field col l6 s12">
+        <input type="text" name="image" spellcheck="false">
+        <label for="image">Image File</label>
       </div>
     </div>
     <div class="row">
-      <div class="input-field">
+      <div class="input-field col l6 s12">
+        <input type="text" name="url" spellcheck="false">
+        <label for="type">Website URL</label>        
+      </div>
+      <div class="input-field col l6 s12">
         <select name="status">
           <option value="public" selected>Public</option> 
           <option value="private">Private</option> 
           <option value="unpublished">Unpublished</option> 
         </select>
         <label for="status">Status</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col l2 s12">
+        <input type="checkbox" id="handlebars" name="techstack[]" value="Handlebars.js"/>
+        <label for="handlebars">Handlebars.js</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="reactredux" name="techstack[]" value="React.js + Redux"/>
+        <label for="reactredux">React.js + Redux</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="angular" name="techstack[]" value="Angular.js"/>
+        <label for="angular">Angular.js</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="view" name="techstack[]" value="View.js"/>
+        <label for="view">View.js</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="meteor"  name="techstack[]" value="Meteor.js"/>
+        <label for="meteor">Meteor.js</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="jquery" name="techstack[]" value="jQuery"/>
+        <label for="jquery">jQuery</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="lodash" name="techstack[]" value="Lodash"/>
+        <label for="lodash">Lodash</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="bootstrap" name="techstack[]" value="Bootstrap"/>
+        <label for="bootstrap">Bootstrap</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="materialize-css" name="techstack[]" value="Materialize CSS"/>
+        <label for="materialize-css">Materialize CSS</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="semantic-ui" name="techstack[]" value="Semantic UI"/>
+        <label for="semantic-ui">Semantic UI</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="firebase"  name="techstack[]" value="Firebase"/>
+        <label for="firebase">Firebase</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="aws" name="techstack[]" value="AWS"/>
+        <label for="aws">AWS</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="php" name="techstack[]" value="PHP"/>
+        <label for="php">PHP</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="laravel" name="techstack[]" value="Laravel"/>
+        <label for="laravel">Laravel</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="nodejs" name="techstack[]" value="Node.js"/>
+        <label for="nodejs">Node.js</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="express" name="techstack[]" value="Express.js"/>
+        <label for="express">Express.js</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="mongodb" name="techstack[]" value="MongoDB"/>
+        <label for="mongodb">MongoDB</label>
+      </div>
+      <div class="col l2 s12">
+        <input type="checkbox" id="mysql" name="techstack[]" value="MySQL"/>
+        <label for="mysql">MySQL</label>
       </div>
     </div>
     <div class="row">
@@ -25,11 +107,11 @@
     </div>
     <div class="row">
       <div class="input-field">
-        <h5>Show Us Your App:</h5>
-        <textarea name="body"></textarea>
+        <h5>List Details For Your App:</h5>
+        <textarea name="body" spellcheck="false"></textarea>
       </div>
     </div>
-    <input type="submit" value="Save" class="waves-effect waves-light btn">
+    <button type="submit" class="waves-effect waves-light btn">Save</button>
   </form>
 </div>
 
