@@ -63,7 +63,7 @@ module.exports = {
     let techStackHtml = '';
     techArray.forEach(function(tech) {
       techStackHtml += `
-        <div class="col l6 xl4 s12 valign-wrapper"> 
+        <div class="col m6 xl4 s12 valign-wrapper"> 
           <input type="checkbox" disabled="disabled" checked="checked"/>
           <label>${tech}</label>
         </div>
