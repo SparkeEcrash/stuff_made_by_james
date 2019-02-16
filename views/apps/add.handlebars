@@ -1,23 +1,34 @@
 <h1>Add App</h1>
 <div class="row">
-  <form action="/apps" method="POST" class="col s12">
+  <form action="/apps" method="POST" class="col s12" onsubmit="return validateApp()">
     <div class="row">
-      <div class="input-field col l6 s12">
-        <input type="text" name="title" spellcheck="false">
+      <div class="input-field col l4 s12">
+        <input type="text" id="title" name="title" spellcheck="false">
         <label for="title">Title</label>
       </div>
-      <div class="input-field col l6 s12">
-        <input type="text" name="image" spellcheck="false">
+        <div class="input-field col l4 s12">
+        <input type="text" id="desc" name="desc" spellcheck="false">
+        <label for="title">Description</label>
+      </div>
+      <div class="input-field col l4 s12">
+        <input type="text" id="image" name="image" spellcheck="false">
         <label for="image">Image File</label>
       </div>
     </div>
     <div class="row">
-      <div class="input-field col l6 s12">
-        <input type="text" name="url" spellcheck="false">
+      <div class="input-field col l4 s12">
+        <input type="text" id="url" name="url" spellcheck="false">
         <label for="type">Website URL</label>        
       </div>
-      <div class="input-field col l6 s12">
-        <select name="status">
+      <div class="input-field col l4 s12">
+        <select id="mobileFriendly" name="mobileFriendly">
+          <option value="yes" selected>Yes</option> 
+          <option value="no">No</option> 
+        </select>
+        <label for="status">Mobile Friendly</label>
+      </div>
+      <div class="input-field col l4 s12">
+        <select id="status" name="status">
           <option value="public" selected>Public</option> 
           <option value="private">Private</option> 
           <option value="unpublished">Unpublished</option> 
@@ -47,7 +58,8 @@
         <label for="meteor">Meteor.js</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="jquery" name="techstack[]" value="jQuery"/>
+        <input type="checkbox" id="id-jquery" name="techstack[]" value="jQuery"/>
+        {{!-- having a dom element with id equal to string 'jquery' messes up behind the scenes jquery functions --}}
         <label for="jquery">jQuery</label>
       </div>
       <div class="col l2 s12">
@@ -107,16 +119,59 @@
     </div>
     <div class="row">
       <div class="input-field">
-        <h5>List Details For Your App:</h5>
-        <textarea name="body" spellcheck="false"></textarea>
+        <h5>List details for your app:</h5>
+        <textarea id="body" name="body" spellcheck="false"></textarea>
       </div>
     </div>
     <button type="submit" class="waves-effect waves-light btn">Save</button>
   </form>
 </div>
+<div id="modal3" class="modal">
+  <div class="modal-content">
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+  </div>
+</div>
 
 <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 <script>
+
+  function validateApp() {
+    let passed = true;
+    $('.modal-content').empty();
+    let missingList = `
+      <h4>Missing Fields</h4>
+      <p>Please make sure the fields listed below are filled in</p>`;
+    missingList += `<ul>`;
+    if($('#title').val() === '') {
+      missingList +=  `<li>Title</li>`;
+      passed = false;
+    }
+    if($('#desc').val() === '') {
+      missingList += `<li>Description</li>`;
+      passed = false;
+    }
+    if($('#url').val() === '') {
+      missingList += `<li>Website URL</li>`;
+      passed = false;
+    }
+
+    if(!CKEDITOR.instances['body'].getData().replace(/<[^>]*>/gi, '').length) {
+      missingList += `<li>Application Details</li>`;
+      passed = false;
+    };
+
+    missingList += '</ul>'
+    if(passed) {
+      return true;
+    } else {
+      $('.modal-content').append(missingList);
+      $('#modal3').modal('open');
+      return false;
+    }
+  }
+
   CKEDITOR.replace('body', {
     plugins: 'wysiwygarea,toolbar,basicstyles,link'
   });

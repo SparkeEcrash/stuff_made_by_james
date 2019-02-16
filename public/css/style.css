@@ -42,12 +42,16 @@ label {
   text-overflow: ellipsis;
 }
 
-.nav-wrapper .fa-bars {
-  font-size: 25px;
+footer {
+  margin-top: 0 !important;
 }
 
-footer {
-  margin-top: 20px;
+.show_desc {
+  color: rgb(1, 144, 240);
+}
+
+.nav-wrapper .fa-bars {
+  font-size: 25px;
 }
 
 .app-text {
@@ -67,7 +71,7 @@ footer {
 }
 
 .app_description {
-  color: rgb(1, 144, 240);
+  color: rgb(1, 144, 240) !important;
 }
 
 .app_techstack {
@@ -92,8 +96,4 @@ table.striped > tbody > tr:nth-child(even) {
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
   color: grey !important;
-}
-
-footer {
-  margin-top: 0 !important;
 }
