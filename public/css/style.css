@@ -67,6 +67,10 @@ footer {
 }
 
 .app_description {
+  color: rgb(1, 144, 240);
+}
+
+.app_techstack {
   height: 150px;
   display: flex !important;
   align-self: center !important;

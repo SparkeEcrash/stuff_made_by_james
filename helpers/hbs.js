@@ -37,7 +37,7 @@ module.exports = {
       });
     }
     return (
-      `<div class="app_description valign-wrapper">
+      `<div class="app_techstack valign-wrapper">
         <ul>
           ${appDescriptionHtml}
         </ul>
