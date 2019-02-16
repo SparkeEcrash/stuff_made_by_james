@@ -95,5 +95,10 @@ module.exports = {
       <a href="javascript:;" onclick="confirmDeleteComment('${appId}', '${commentId}')">Delete</a>
       </form>`
     }
+  },
+  mobileFriendlyCheck: function(mobileFriendlyStatus) {
+    if(mobileFriendlyStatus === 'no') {
+      return `<small>Not Mobile Friendly</small>`
+    }
   }
 }

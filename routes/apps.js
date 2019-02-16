@@ -109,10 +109,12 @@ router.post('/', (req, res) => {
   const techStack = req.body['techstack[]'];
   const newApp = {
     title: req.body.title,
+    desc: req.body.desc,
     image: req.body.image,
     url: url,
     body: req.body.body,
     status: req.body.status,
+    mobileFriendly: req.body.mobileFriendly,
     techStack: techStack,
     allowComments: allowComments,
     user: req.user.id
@@ -150,10 +152,12 @@ router.put('/:id', (req, res) => {
 
   //New values
   app.title = req.body.title;
+  app.desc = req.body.desc;
   app.image = req.body.image;
   app.url = url;
   app.body = req.body.body;
   app.status = req.body.status;
+  app.mobileFriendly = req.body.mobileFriendly;
   app.techStack = techStack,
   app.allowComments = allowComments;
   app.save()

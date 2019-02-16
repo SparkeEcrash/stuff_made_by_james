@@ -1,25 +1,38 @@
 <h1>Edit App</h1>
 <div class="row">
-  <form action="/apps/{{app.id}}?_method=PUT" method="POST" class="col s12">
+  <form action="/apps/{{app.id}}?_method=PUT" method="POST" class="col s12" onsubmit="return validateApp()">
   {{!-- method gets overriden as PUT over POST --}}
     <input type="hidden" name="_method" value="PUT">
     <div class="row">
-      <div class="input-field col l6 s12">
-        <input type="text" name="title" value="{{app.title}}" spellcheck="false">
+      <div class="input-field col l4 s12">
+        <input type="text" id="title" name="title" value="{{app.title}}" spellcheck="false">
         <label for="title">Title</label>
       </div>
-      <div class="input-field col l6 s12">
-        <input type="text" name="image" value="{{app.image}}" spellcheck="false">
+      <div class="input-field col l4 s12">
+        <input type="text" id="desc" name="desc" value="{{app.desc}}" spellcheck="false">
+        <label for="desc">Description</label>
+      </div>
+      <div class="input-field col l4 s12">
+        <input type="text" id="image" name="image" value="{{app.image}}" spellcheck="false">
         <label for="image">Image File</label>
       </div>
     </div>
     <div class="row">
-      <div class="input-field col l6 s12">
-        <input type="text" name="url" value="{{app.url}}" spellcheck="false">
+      <div class="input-field col l4 s12">
+        <input type="text" id="url" name="url" value="{{app.url}}" spellcheck="false">
         <label for="type">Website URL</label>
-      </div>     
-      <div class="input-field col l6 s12">
-        <select name="status">
+      </div>  
+      <div class="input-field col l4 s12">
+        <select id="mobileFriendly" name="mobileFriendly">
+          {{#select app.mobileFriendly}}
+            <option value="yes" selected>Yes</option>
+            <option value="no">No</option>
+          {{/select}}
+        </select>
+        <label for="status">Mobile Friendly</label>
+      </div>   
+      <div class="input-field col l4 s12">
+        <select id="status" name="status">
           {{!-- below part is using the below heper function from hbs.js--}}
           {{!-- select: function(selected, options){} --}}
           {{#select app.status}}
@@ -55,7 +68,7 @@
         <label for="meteor">Meteor.js</label>
       </div>
       <div class="col l2 s12">
-        <input type="checkbox" id="jquery" name="techstack[]" {{{techStackCheck app.techStack 'jQuery'}}} value="jQuery"/>
+        <input type="checkbox" id="id-jquery" name="techstack[]" {{{techStackCheck app.techStack 'jQuery'}}} value="jQuery"/>
         <label for="jquery">jQuery</label>
       </div>
       <div class="col l2 s12">
@@ -116,15 +129,58 @@
     <div class="row">
       <div class="input-field">
         <h5>List details for your application:</h5>
-        <textarea name="body">{{app.body}}</textarea>
+        <textarea id="body" name="body">{{app.body}}</textarea>
       </div>
     </div>
     <button type="submit" class="waves-effect waves-light btn">Save</button>
   </form>
 </div>
+<div id="modal3" class="modal">
+  <div class="modal-content">
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+  </div>
+</div>
 
 <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 <script>
+
+  function validateApp() {
+    let passed = true;
+    $('.modal-content').empty();
+    let missingList = `
+      <h4>Missing Fields</h4>
+      <p>Please make sure the fields listed below are filled in</p>`;
+    missingList += `<ul>`;
+    if($('#title').val() === '') {
+      missingList +=  `<li>Title</li>`;
+      passed = false;
+    }
+    if($('#desc').val() === '') {
+      missingList += `<li>Description</li>`;
+      passed = false;
+    }
+    if($('#url').val() === '') {
+      missingList += `<li>Website URL</li>`;
+      passed = false;
+    }
+
+    if(!CKEDITOR.instances['body'].getData().replace(/<[^>]*>/gi, '').length) {
+      missingList += `<li>Application Details</li>`;
+      passed = false;
+    };
+
+    missingList += '</ul>'
+    if(passed) {
+      return true;
+    } else {
+      $('.modal-content').append(missingList);
+      $('#modal3').modal('open');
+      return false;
+    }
+  }
+
   CKEDITOR.replace('body', {
     plugins: 'wysiwygarea,toolbar,basicstyles,link'
   });

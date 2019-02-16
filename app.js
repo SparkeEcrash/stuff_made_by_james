@@ -32,7 +32,8 @@ const {
   techStackView,
   techStackCheck,
   editIcon,
-  editComment
+  editComment,
+  mobileFriendlyCheck
 } = require('./helpers/hbs');
 
 mongoose.connect(keys.mongoURI, {useNewUrlParser: true})
@@ -60,7 +61,8 @@ app.engine('handlebars', exphbs({
     techStackView,
     techStackCheck,
     editIcon,
-    editComment
+    editComment,
+    mobileFriendlyCheck
   },
   defaultLayout: 'main'
 }));

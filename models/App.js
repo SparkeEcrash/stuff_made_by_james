@@ -7,6 +7,10 @@ const AppSchema = new Schema({
     type: String,
     required: true
   },
+  desc: {
+    type: String,
+    required: true
+  },
   image: {
     type: String,
   },
@@ -22,6 +26,10 @@ const AppSchema = new Schema({
     type: String,
     default: 'public'
   }, 
+  mobileFriendly: {
+    type: String,
+    default: 'Yes'
+  },
   techStack: {
     type: Array,
     default: []
