@@ -50,6 +50,10 @@ footer {
   max-height: 56px;
 }
 
+.logout {
+  max-height: 56px;
+}
+
 .show_desc {
   color: rgb(1, 144, 240);
 }
