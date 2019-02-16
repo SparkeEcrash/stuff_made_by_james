@@ -26,8 +26,11 @@ const keys = require('./config/keys');
 const {
   truncate,
   stripTags,
+  appDescription,
   formatDate,
   select,
+  techStackView,
+  techStackCheck,
   editIcon,
   editComment
 } = require('./helpers/hbs');
@@ -51,8 +54,11 @@ app.engine('handlebars', exphbs({
   helpers: {
     truncate,
     stripTags,
+    appDescription,
     formatDate,
     select,
+    techStackView,
+    techStackCheck,
     editIcon,
     editComment
   },
@@ -87,6 +93,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/auth', auth);
 app.use('/apps', apps);
+
+app.get('*', function(req, res) {
+  res.render('index/404');
+})
 
 const port = process.env.PORT || 5000;
 

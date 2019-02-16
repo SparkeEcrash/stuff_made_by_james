@@ -24,12 +24,22 @@ main {
   min-height: calc(100vh - 64px);
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 a {
   color: black;
 }
 
 label {
   color: black;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nav-wrapper .fa-bars {
@@ -50,6 +60,17 @@ footer {
 
 .delete-app {
   display: inline;
+}
+
+.login {
+  color: hotpink !important;
+}
+
+.app_description {
+  height: 150px;
+  display: flex !important;
+  align-self: center !important;
+  justify-content: center !important;
 }
 
 #profile-picture{

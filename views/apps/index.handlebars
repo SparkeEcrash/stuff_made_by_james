@@ -1,7 +1,7 @@
 <h1>Apps</h1>
 <div class="row">
   {{#each apps}}
-    <div class="col s12 m4">
+    <div class="col s12 m6 l4">
       <div class="card">
         <div class="card-image">
           {{#if user}}
@@ -15,9 +15,13 @@
           <h5>{{title}}</h5>
           {{!-- stripTags body ==> stripTags(body) *using the helper function --}}
           {{!-- truncate body 150 ==> truncate(body, 150) *using the helper function --}}
-          <p class="app-text">{{truncate (stripTags body) 150}}</p>
           {{!-- {{{ }}} three curly brackets parses the text into html --}}
           {{!-- {{ }} two curly brackets just prints out the text --}}
+
+          {{!-- <p class="app-text">{{truncate (stripTags body) 150}}</p> --}}
+
+          {{{appDescription techStack}}}
+
           <br>
           <div class="chip">
             <img src="{{user.image}}" alt="Contact Person">

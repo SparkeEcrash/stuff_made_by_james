@@ -7,6 +7,13 @@ const AppSchema = new Schema({
     type: String,
     required: true
   },
+  image: {
+    type: String,
+  },
+  url: {
+    type: String,
+    required: true
+  },
   body: {
     type: String,
     required: true
@@ -15,6 +22,10 @@ const AppSchema = new Schema({
     type: String,
     default: 'public'
   }, 
+  techStack: {
+    type: Array,
+    default: []
+  },
   allowComments: {
     type: Boolean,
     default: true
