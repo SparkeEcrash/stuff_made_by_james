@@ -4,7 +4,7 @@
     <div class="col s12 m6 l4">
       <div class="card">
         <div class="card-image">
-          <a href="/apps/show/{{id}}"><div style="background-image: url('/images/{{image}}')" class="floating_middle_image"></div></a>
+          <a href="/apps/show/{{id}}"><div style="background-image: url('/images/{{image}}'); background-color: white;" class="floating_middle_image"></div></a>
           {{#if user}}
           {{{editIcon user.id ../user.id id}}}
           {{!-- ../ is required because user.id is inside the #each apps loop --}}
