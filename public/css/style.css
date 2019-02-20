@@ -85,6 +85,33 @@ nav ul a:hover {
   justify-content: center !important;
 }
 
+.navbar_hover:hover {
+  color: rgb(214, 214, 214);
+}
+
+.nav_sidebar_adjustment {
+  font-size: 25px !important;
+  color: rgb(1, 144, 240) !important;
+}
+
+.nav_sidebar_adjustment:hover {
+  color: rgb(179, 179, 179) !important;
+}
+
+.nav_sidebar_adjustment:hover i {
+  color: rgb(179, 179, 179) !important;
+}
+
+.navbar_link {
+  font-size: 20px !important;
+}
+
+.nav_sidebar_icon_adjustment {
+  position: relative;
+  top: 2px;
+  color: rgb(1, 144, 240) !important;
+}
+
 table.striped > tbody > tr:nth-child(even) {
   background-color: rgb(221, 221, 221);
 }
@@ -96,6 +123,7 @@ table.striped > tbody > tr:nth-child(even) {
   width: 250px;
   border-radius: 50%;
   margin-top: 40px;
+  border: 3px solid rgb(1, 144, 240);
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {

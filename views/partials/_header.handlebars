@@ -1,22 +1,22 @@
 <nav class="blue darken-1">
   <div class="container">
     <div class="nav-wrapper">
-      <a href="#" data-activates="main-menu" class="button-collapse show-on-large"><i class="fa fa-bars"></i></a>
+      <a href="#" data-activates="main-menu" class="button-collapse show-on-large navbar_hover"><i class="fa fa-bars"></i></a>
       <ul class="right">
         {{#if user}}
-          <a href="/" class="brand-logo center hide-on-small-only">Hi {{user.firstName}}</a>
+          <a href="/" class="brand-logo center hide-on-small-only navbar_font navbar_hover">Hi {{user.firstName}}</a>
           {{!-- <li><a href="/dashboard">Welcome {{user.firstName}}</a></li> --}}
-          <li><a href="/auth/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+          <li><a href="/auth/logout" class="navbar_font navbar_link navbar_hover"><i class="fa fa-sign-out "></i> Logout</a></li>
         {{else}}
-          <a href="/" class="brand-logo center  hide-on-small-only">Welcome</a>
-          <li><a href="/apps"><i class="fa fa-folder-open"></i> James's Apps</a></li>
+          <a href="/" class="brand-logo center  hide-on-small-only navbar_font nav_title_margin_top navbar_hover">Stuff Made by James</a>
+          <li><a href="/apps" class="navbar_font navbar_link navbar_hover"><i class="fa fa-folder-open"></i> James's Apps</a></li>
         {{/if}}
       </ul>
       <!-- SIDE MENU -->
       <ul class="side-nav" id="main-menu" class="valign-wrapper">
         {{#if user}}
         <li>
-          <a href="/auth/logout"><i class="fa fa-sign-out"></i> Logout</a>
+          <a href="/auth/logout" class="nav_sidebar_adjustment navbar_hover"><i class="fa fa-sign-out nav_sidebar_icon_adjustment"></i> Logout</a>
         </li>
         {{else}}
         <li>
@@ -24,15 +24,15 @@
         </li>
         {{/if}}
         <li>
-          <a href="/apps"><i class="fa fa-folder-open"></i> James's Apps</a>
+          <a href="/apps" class="nav_sidebar_adjustment navbar_hover"><i class="fa fa-folder-open nav_sidebar_icon_adjustment"></i> James's Apps</a>
         </li>
         {{#if user.owner}}
         <li class="divider"></li>
         <li>
-          <a href="/dashboard"><i class="fa fa-cog"></i> Dashboard</a>
+          <a href="/dashboard" class="nav_sidebar_adjustment navbar_hover"><i class="fa fa-cog nav_sidebar_icon_adjustment"></i> Dashboard</a>
         </li>
         <li>
-          <a href="/apps/my"><i class="fa fa-user"></i> My Apps</a>
+          <a href="/apps/my" class="nav_sidebar_adjustment navbar_hover"><i class="fa fa-user  nav_sidebar_icon_adjustment"></i> My Apps</a>
         </li>
         {{/if}}
       </ul>
