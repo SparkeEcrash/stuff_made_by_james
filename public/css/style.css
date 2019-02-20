@@ -118,6 +118,7 @@ table.striped > tbody > tr:nth-child(even) {
 
 #profile-picture{
   background-image: url('/images/profile_bw.jpg');
+  background-color: white;
   background-size: cover;
   height: 250px;
   width: 250px;
