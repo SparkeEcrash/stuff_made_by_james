@@ -1,20 +1,20 @@
 <h1>Welcome {{user.firstName}}</h1>
 <h4>Your Apps</h4>
 {{#if apps}}
-  <table class="highlight striped centered responsive-table">
+  <table class="highlight table_border centered responsive-table margin_bottom">
     <thead>
       <tr>
         <th>Title</th>
         <th>Date</th>
         <th>Status</th>
-        <th></th>
+        <th>Options</th>
       </tr>
     </thead>
     <tbody>
       {{#each apps}}
         <tr>
           <td><a href="/apps/show/{{id}}">{{title}}</a></td>
-          <td>{{formatDate data 'MMMM do YYYY'}}</td>
+          <td>{{formatDate date 'MMMM Do YYYY'}}</td>
           <td><span class="dash-status">{{status}}</span></td>
           <td class="center-align">
             <a class="waves-effect waves-light btn" href="/apps/edit/{{id}}"><i class="fa fa-pencil"></i> Edit</a>

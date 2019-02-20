@@ -101,3 +101,53 @@ table.striped > tbody > tr:nth-child(even) {
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
   color: grey !important;
 }
+
+.margin_bottom {
+  margin-bottom: 50px;
+}
+
+.margin_top {
+  margin-top: 50px;
+}
+
+.spread_icons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer_icon {
+  display: inline-block;
+  font-size: 60px !important;
+}
+
+.hover_blue:hover {
+  color: rgb(1, 144, 240);
+}
+
+.align_middle {
+  text-align: center;
+}
+
+.floating_middle_image {
+  position: absolute;
+  left: 5%;
+  bottom: -35px;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-image: url('/images/profile_bw.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 3px solid rgb(1, 144, 240);
+}
+
+table {
+  background-color: white;
+}
+
+.overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
