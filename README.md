@@ -4,7 +4,7 @@ Handlebars.js and MongoDB Gallery Website
 
 ## Hosted
 
-[Here](http//www.stuffmadebyjames.com)
+[Here](http://www.stuffmadebyjames.com)
 
 ## Features
 
