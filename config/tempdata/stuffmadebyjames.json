@@ -1,0 +1,31 @@
+{
+	"_id": {
+			"$oid": "5c6b2c9f31f8d90017c276e0"
+	},
+	"status": "public",
+	"mobileFriendly": "yes",
+	"techStack": [
+			"Handlebars.js",
+			"jQuery",
+			"Materialize CSS",
+			"Node.js",
+			"Express.js",
+			"MongoDB"
+	],
+	"allowComments": true,
+	"title": "Stuff Made By James",
+	"desc": "Gallery",
+	"image": "stuff_made_by_james.jpg",
+	"url": "http://www.stuffmadebyjames.com",
+	"body": "<p>The website you are currently on is Stuff Made By James. This was a website I made in order to post apps I would like to share. It was made for personal as well as for professional purposes. I wanted a site where I could display my wide range of skillsets for&nbsp;making&nbsp;games, eCommerce, CMS, and media players. I like sharing my projects with others and I am always grateful to those who take the time to look and tell me what they think. I plan to use the lessons I learn from making and using this website for myself to build another website in which any web developer can use their Google account to post and share links to their web apps for others to see. I think web development is a highly creative art and I think that it is awesome that the internet makes it so easy to share my content with others.<\/p><p> <\/p><p>The most&nbsp; challenging part of making this website was changing from React.js to using Handlebars.js. Handlebars.js and React.js have fundamentally different approaches for&nbsp;injecting&nbsp;information into views. Handlebars.js use JSON objects while React.js has a much more powerful system called Redux (the one that I use for React.js). While React.js's component system is a&nbsp;different web development design, I found it convenient that Handlebars.js stays close to the standard HTML CSS and Javascript as much as possible. I thought it was pretty important for myself to be able to switch between different frameworks&nbsp;in order stay as a nimble and flexible programmer.&nbsp;<\/p>",
+	"user": {
+			"$oid": "5c6363f8f99ddb001764d373"
+	},
+	"comments": [],
+	"date": {
+			"$date": "2019-02-18T22:07:27.798Z"
+	},
+	"__v": 3
+}
+
+7

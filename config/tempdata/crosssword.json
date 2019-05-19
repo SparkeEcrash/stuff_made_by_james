@@ -1,0 +1,26 @@
+{
+	"_id": {
+			"$oid": "5c6b1e4531f8d90017c276dd"
+	},
+	"status": "public",
+	"mobileFriendly": "no",
+	"techStack": [
+			"jQuery"
+	],
+	"allowComments": true,
+	"title": "WoW Crossword Puzzle",
+	"desc": "Game",
+	"image": "wow_crossword_puzzle.jpg",
+	"url": "http://www.jamesjinpark.com/wowpuzzle",
+	"body": "<p>This was a crossword puzzle game that I made for a hackathon at Learning Fuze. We had one full day to create a crossword puzzle game from scratch and the task was actually much more difficult than I anticipated. I was placed in charge of creating an algorithm that placed a random list of words randomly on the crossword puzzle board. I found it challenging because we only had a&nbsp;short amount of time to put a working game out by the end of the hackathon. I remember not moving away from my screen for a few&nbsp;hours because I was too consumed with figuring out the logic the board would use in order to guarantee that all words are placed on the board randomly. Plus the pressure on me was pretty high considering that if I failed to produce a working algorithm, then all the work that my teammates had done for the user interface&nbsp;would be for nothing&nbsp;because the game would be broken.&nbsp;<\/p><p> <\/p><p>Fortunately, I was able to do the job with a one or two&nbsp;hours to spare. Our&nbsp;group had plenty of time to put everything together as well as to add a cool looking World of Warcraft theme to please&nbsp;the people of&nbsp;Irvine, CA. Overall I was happy&nbsp;with what we were able to produce. Out of the five hackathon groups, two (including ours) were able to create a random board generation feature. However, what I'm more proud of is the awesome surprise you get when you click the World of Warcraft Icon at the top left. Make sure you check it out.&nbsp;<\/p>",
+	"user": {
+			"$oid": "5c6363f8f99ddb001764d373"
+	},
+	"comments": [],
+	"date": {
+			"$date": "2019-02-18T21:06:13.328Z"
+	},
+	"__v": 0
+}
+
+3

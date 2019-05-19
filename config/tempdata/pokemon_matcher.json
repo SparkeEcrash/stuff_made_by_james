@@ -1,0 +1,26 @@
+{
+    "_id": {
+        "$oid": "5c6b18f431f8d90017c276dc"
+    },
+    "status": "public",
+    "mobileFriendly": "no",
+    "techStack": [
+        "jQuery"
+    ],
+    "allowComments": true,
+    "title": "Pokemon Matcher",
+    "desc": "Game",
+    "image": "pokemon_matcher.jpg",
+    "url": "http://www.jamesjinpark.com/pokemonmatcher",
+    "body": "<p>This was the second mini game I made at Learning Fuze. The idea was to create a matching game and I gave myself a challenge by using&nbsp;a rotation system to place&nbsp;DOM elements in and out of the window. The objective of the game is to remember which Pokemon was in which Pokeball and to find&nbsp;matching Pokemon pairs by checking&nbsp;the Pokeballs.&nbsp;I focused on&nbsp;making&nbsp;the gameplay feel smooth by the way the player can control the movement of the Pokeball moving in and out of the screen. Players need to use only five buttons which are the arrow keys and the enter button.<\/p><p> <\/p><p>The game was not so challenging to make. The tricky part was coordinating the Pokeballs to move in and out of the screen accordingly and pulling the correct properties&nbsp;(such as the Pokeball type, the Pokemon inside, and the Pokeball owner) for the Pokeballs to have. Once the fundamental mechanics were in place everything fell into place and the game was working well. The game is very difficult at first but once pairs are matched, the game gets noticeably easier. Good luck to those who give it a try. Remember to&nbsp;catch'em all.&nbsp;<\/p>",
+    "user": {
+        "$oid": "5c6363f8f99ddb001764d373"
+    },
+    "comments": [],
+    "date": {
+        "$date": "2019-02-18T20:43:32.254Z"
+    },
+    "__v": 0
+}
+
+1
