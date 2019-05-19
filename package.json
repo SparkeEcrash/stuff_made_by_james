@@ -19,6 +19,7 @@
   "homepage": "https://github.com/SparkeEcrash/stuff_made_by_james#readme",
   "dependencies": {
     "cookie-parser": "^1.4.4",
+    "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
